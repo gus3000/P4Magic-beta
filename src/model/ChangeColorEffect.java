@@ -32,6 +32,5 @@ public class ChangeColorEffect extends Effect {
         }
         game.getBoard().getTileIJ(line, column).setStatus(tile_id);
     }
-    //TODO : je me demande si c'est une bonne idée de passer les coordonnées dans l'effet. Ce serait pas plus simple de le faire sur une case ?  
 
 }

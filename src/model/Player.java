@@ -64,5 +64,4 @@ public abstract class Player {
     public void setId(int id) {
         this._id = id;
     }
-    //TODO : valider avec Antoine que les modifications lui conviennent
 }

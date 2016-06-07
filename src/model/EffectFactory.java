@@ -16,9 +16,7 @@ public class EffectFactory {
 
     /**
      * Returns a random effect chosen amongst the available effects listed
-     * When creating a new effect : 
-     *  - Update the max value to take it into account
-     *  - Add a new case to the switch (see the example below)
+     *
      * @return an effect
      */
     public static Effect createEffect() {
@@ -39,5 +37,5 @@ public class EffectFactory {
         return null;
 
     }
-
+    
 }

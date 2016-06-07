@@ -111,7 +111,6 @@ public class Board {
     public int getTileEffectChance() {
         return this._tileEffectChance;
     }
-    //TODO : discuter avec Antoine
 
     /**
      * Get the board width
@@ -190,7 +189,6 @@ public class Board {
         return boardString;
     }
 
-    // TODO proposer un refactoring à antoine, avec le numéro de joueur en paramettre et une wildcard pour tous les joueurs
     /**
      * Returns the number of tiles owned by player 1 on the board
      *

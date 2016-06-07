@@ -15,6 +15,5 @@ public class HumanPlayer extends Player {
     public HumanPlayer(int id, Color color) {
         super(id, color);
     }
-    //TODO : discuter avec Antoine de l'idée originale
 
 }

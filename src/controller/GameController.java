@@ -260,6 +260,7 @@ public final class GameController {
     private void playAgain() {
 
         this._view.getEndGameFrame().setVisible(false);
+        this._view.getMainFrame().setVisible(false);
         this._view.getSettingsFrame().setVisible(true);
         this._game.resetGame();
         this._view.resetView();
@@ -271,7 +272,6 @@ public final class GameController {
      */
     private void startGame() {
 
-        //TODO la taille des grilles devrait être un paramètre
         int width = 10;
         int height = 10;
 
@@ -279,7 +279,6 @@ public final class GameController {
         this._game.setBoard(board);
         this._game.getBoard().setEffectChances(this._view.getSettingsTileSlider().getValue());
 
-        //TODO discuter avec Antoine de la position de cette méthode
         this._game.setTilesEffect();
 
         this._view.setWidth(width);

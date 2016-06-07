@@ -81,7 +81,7 @@ public final class Game extends Observable {
                 this._board.getTileIJ(i, column).getEffect().playEffect(i, column, this);
             }
 
-            Player tmp = win();
+            Player tmp = Win();
             if (tmp != null) {
                 this._winner = tmp.getId();
             }
@@ -98,7 +98,6 @@ public final class Game extends Observable {
             notifyObservers();
         }
     }
-    // TODO : voir avec antoine pour commenter cette méthode. 
 
     /**
      * Make sure the player can play in the column
@@ -109,14 +108,13 @@ public final class Game extends Observable {
     public boolean strokeIsValid(int column) {
         return this._board.getTileIJ(0, column).getStatus() == -1;
     }
-    // TODO : vérifier auprès d'antoine que j'ai bien compris 
 
     /**
      * Check if there is a winner or not
      *
      * @return id of the winner, or null if there is no winner
      */
-    public Player win() {
+    public Player Win() {
 
         //Look for win combinations on lines
         for (int i = 0; i < this._board.getHeight(); ++i) {
@@ -168,28 +166,27 @@ public final class Game extends Observable {
             }
 
         }
-        // TODO : voir avec Antoine pourquoi c'est commenté 
-        /*//Vérification des diagonales gauches
-        for (int i = this._board.getHeight(); i >= (this._board.getWidth() - 4); --i) {
+
+        //Vérification des diagonales gauches
+        for (int i = 3; i < this._board.getWidth(); ++i) {
 
             for (int j = 0; j <= (this._board.getHeight() - 4); ++j) {
 
-                if (this._player1.getId() == this._board.getTileIJ(j, i).getIdPlayer() && this._player1.getId() == this._board.getTileIJ(j + 1, i - 1).getIdPlayer() && this._player1.getId() == this._board.getTileIJ(j + 2, i - 2).getIdPlayer() && this._player1.getId() == this._board.getTileIJ(j + 3, i - 3).getIdPlayer()) {
+                if (this._player1.getId() == this._board.getTileIJ(j, i).getStatus() && this._player1.getId() == this._board.getTileIJ(j + 1, i - 1).getStatus() && this._player1.getId() == this._board.getTileIJ(j + 2, i - 2).getStatus() && this._player1.getId() == this._board.getTileIJ(j + 3, i - 3).getStatus()) {
                     return _player1;
                 }
 
-                if (this._player2.getId() == this._board.getTileIJ(j, i).getIdPlayer() && this._player2.getId() == this._board.getTileIJ(j + 1, i - 1).getIdPlayer() && this._player2.getId() == this._board.getTileIJ(j + 2, i - 2).getIdPlayer() && this._player2.getId() == this._board.getTileIJ(j + 3, i - 3).getIdPlayer()) {
+                if (this._player2.getId() == this._board.getTileIJ(j, i).getStatus() && this._player2.getId() == this._board.getTileIJ(j + 1, i - 1).getStatus() && this._player2.getId() == this._board.getTileIJ(j + 2, i - 2).getStatus() && this._player2.getId() == this._board.getTileIJ(j + 3, i - 3).getStatus()) {
                     return _player2;
                 }
 
             }
 
-        }*/
+        }
 
         return null;
 
     }
-    //TODO : pour moi, ça devrait pas retourner un player
 
     /**
      * Check if the game is over
@@ -211,7 +208,6 @@ public final class Game extends Observable {
         this._over = true;
 
     }
-    // TODO : proposer à Antoine de ne faire qu'une simple boucle (sur la ligne du haut)
 
     /**
      * Reset the game
@@ -332,7 +328,6 @@ public final class Game extends Observable {
     public int getWinner() {
         return this._winner;
     }
-    //TODO : de temps en temps id, de temps en temps player. Uniformiser ?
 
     /**
      * Is the game over ?
@@ -351,7 +346,6 @@ public final class Game extends Observable {
     public Player getPlayer1() {
         return this._player1;
     }
-    //TODO : ce serait mieux d'avoir un getPlayer
 
     /**
      * Get player 2
